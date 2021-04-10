@@ -5,7 +5,10 @@ const routes: RouteConfig[] = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Deals.vue') },
+      { path: '/income', component: () => import('pages/Income.vue') },
+      { path: '/costs', component: () => import('pages/Costs.vue') },
+      { path: '/help', component: () => import('pages/Help.vue') }
     ]
   },
 

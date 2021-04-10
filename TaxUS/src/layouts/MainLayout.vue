@@ -21,7 +21,7 @@
         <div class="text-h3">Tax assistant</div>
         <div class="text-subtitle1">{{todaysDate}}</div>
       </div>
-      <q-img src="..\statics\head-tax.jpg" 
+      <q-img src="..\statics\head-tax.jpg"
           class="header-image absolute-top" />
     </q-header>
 
@@ -29,71 +29,71 @@
         v-model="leftDrawerOpen"
         show-if-above
         :width="250"
-        :breakpoint="600"
+        :breakpoint="800"
       >
-        <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
+        <q-scroll-area style="height: calc(100% - 192px); margin-top: 192px; border-right: 1px solid #ddd">
           <q-list padding>
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="inbox" />
-              </q-item-section>
 
+            <q-item to="/" exact clickable v-ripple>  
+              <q-item-section avatar>
+                <q-icon name="check_circle" />
+              </q-item-section>
               <q-item-section>
-                Inbox
+                Deals
+              </q-item-section>
+            </q-item>
+            
+            <q-item to="/Income" exact clickable v-ripple>  
+              <q-item-section avatar>
+                <q-icon name="attach_money" />
+              </q-item-section>
+              <q-item-section>
+                Income
               </q-item-section>
             </q-item>
 
-            <q-item active clickable v-ripple>
+            <q-item to="/Costs" exact clickable v-ripple>  
               <q-item-section avatar>
-                <q-icon name="star" />
+                <q-icon name="money_off" />
               </q-item-section>
-
               <q-item-section>
-                Star
+                Costs
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
+            <q-item to="/help" exact clickable v-ripple>  
               <q-item-section avatar>
-                <q-icon name="send" />
+                <q-icon name="help" />
               </q-item-section>
-
               <q-item-section>
-                Send
+                Help
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="drafts" />
-              </q-item-section>
-
-              <q-item-section>
-                Drafts
-              </q-item-section>
-            </q-item>
           </q-list>
         </q-scroll-area>
 
-        <q-img class="absolute-top" src="..\statics\background.jpg" style="height: 150px; color: $primary;">
+        <q-img class="absolute-top" src="../statics/background.jpg" style="height: 192px; color: $primary;">
           <div class="absolute-bottom bg-transparent">
             <q-avatar size="56px" class="q-mb-sm">
-              <img src="..\statics\avatar.jpg">
+              <img src="../statics/avatar.jpg">
             </q-avatar>
             <div class="text-weight-bold">Arctic Fox</div>
-            <div>@arcticfox</div>
+            <div>@arcticfox_usa</div>
           </div>
         </q-img>
       </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
 
 <script lang="ts">
-import EssentialLink from 'components/EssentialLink.vue'
+import EssentialLink from '../components/EssentialLink.vue'
 import { date } from 'quasar'
 
 const linksData = [
@@ -102,42 +102,6 @@ const linksData = [
     caption: 'quasar.dev',
     icon: 'school',
     link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
   }
 ]
 
